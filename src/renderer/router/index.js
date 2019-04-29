@@ -7,8 +7,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'landing-page',
-      component: require('@/views/LandingPage').default
+      name: 'home',
+      component: require('@/views/Index').default
+    },
+    {
+      path: '/session',
+      name: 'session',
+      component: require('@/views/Session/Session').default
+    },
+    {
+      path: '/circle',
+      name: 'circle',
+      component: require('@/views/Circle/Circle').default
     },
     {
       path: '*',
