@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import LandingPage from '@/components/LandingPage'
+import LandingPage from '@/views/LandingPage'
 
 describe('LandingPage.vue', () => {
   it('should render correct contents', () => {
@@ -8,6 +8,8 @@ describe('LandingPage.vue', () => {
       render: h => h(LandingPage)
     }).$mount()
 
-    expect(vm.$el.querySelector('.title').textContent).to.contain('Welcome to your new project!')
+    expect(vm.$el.querySelector('.title').textContent).to.contain(
+      'Welcome to your new project!'
+    )
   })
 })
