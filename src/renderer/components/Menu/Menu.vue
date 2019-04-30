@@ -1,6 +1,6 @@
 <template>
   <div class="menu clearfix">
-    <div class="menu-item" v-for="menu in list" :key="menu.id" @click="goRouter(menu.router)">
+    <div class="menu-item" :class="{'active': $route.name == menu.router}" v-for="menu in list" :key="menu.id" @click="goRouter(menu.router)">
       <img src="../../assets/images/1.png" alt="">
       <div class="name">{{menu.name}}</div>
     </div>
@@ -50,6 +50,9 @@ export default {
       ]
     }
   },
+  mounted () {
+    // console.log(this.$route)
+  },
   methods: {
     goRouter (name) {
       this.$router.push({
@@ -68,12 +71,28 @@ export default {
   float: left;
   text-align: center;
   padding: 5px 20px;
+  cursor: pointer;
 }
 .menu-item img {
   width: 40px;
   height: 40px;
+  vertical-align: middle;
 }
 .menu-item .name {
   display: block;
+}
+.active {
+  color: #fff;
+  background: #2d8cf0;
+  background: linear-gradient(
+      58deg,
+      hsla(204.91, 99.66%, 65.81%, 1) 0%,
+      hsla(204.91, 99.66%, 65.81%, 0) 65%
+    ),
+    linear-gradient(
+      245deg,
+      hsla(210.77, 86.67%, 55.88%, 1) 100%,
+      hsla(210.77, 86.67%, 55.88%, 0) 70%
+    );
 }
 </style>
