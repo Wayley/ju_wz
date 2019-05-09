@@ -23,16 +23,17 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    width: 1900,
-    height: 700,
+    width: 1200,
+    height: 800,
     useContentSize: true
     // frame: false
   })
 
   mainWindow.loadURL(winURL)
 
-  mainWindow.on('closed', () => {
+  mainWindow.on('closed', event => {
     mainWindow = null
+    event.preventDefault()
   })
 }
 
